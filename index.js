@@ -24,20 +24,20 @@ const PORT = process.env.PORT || 4001;
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     // add * ki jagah front end ka local host
-//     origin: "*",
-//     credentials: true,
-//   })
-// );
 app.use(
   cors({
-    // origin: "http://localhost:3000",
-    origin: `${process.env.BASE_URL}`,
+    // add * ki jagah front end ka local host
+    origin: "*",
     credentials: true,
   })
 );
+// app.use(
+//   cors({
+//     // origin: "http://localhost:3000",
+//     origin: `${process.env.BASE_URL}`,
+//     credentials: true,
+//   })
+// );
 app.use(
   fileUpload({
     useTempFiles: true,
